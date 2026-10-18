@@ -1,0 +1,19 @@
+{
+  "project": "Ashen Hollow",
+  "version": "0.1.0",
+  "engine": "Godot 4.6.3",
+  "artifacts": [
+    {
+      "file": "Ashen_Hollow_Windows.zip",
+      "bytes": 40023609,
+      "sha256": "51c36f8eda59240178b62d04d209a4684eaf33f774a5bd71818814f3067cd0b6",
+      "entries": 9
+    },
+    {
+      "file": "Ashen_Hollow_Source.zip",
+      "bytes": 4866332,
+      "sha256": "4fcfeb31eac6948c2c37e3ce5dd82e62aa44d7d8dd95025e37c3fea3f7b54b17",
+      "entries": 80
+    }
+  ]
+}
