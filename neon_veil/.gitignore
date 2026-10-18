@@ -1,0 +1,5 @@
+.godot/
+builds/
+test-results/
+*.blend1
+__pycache__/

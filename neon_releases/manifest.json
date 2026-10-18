@@ -1,0 +1,16 @@
+{
+  "game": "NEON VEIL \u2014 Kasumi Passage",
+  "engine": "Godot 4.5 stable",
+  "artifacts": [
+    {
+      "file": "Neon_Veil_Source.zip",
+      "bytes": 10492669,
+      "sha256": "d38a92637bc17434416d71fcfbf18284e06ee28c0165a2840e3de2a7cc422f42"
+    },
+    {
+      "file": "Neon_Veil_Windows.zip",
+      "bytes": 40951433,
+      "sha256": "06881a2415da36d579edaef8b5ea9f9da63b3af8da66b0fe6df88d2998cc3022"
+    }
+  ]
+}
