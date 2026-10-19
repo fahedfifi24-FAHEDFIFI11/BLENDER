@@ -1,0 +1,11 @@
+{
+  "scope": "Static packaging inputs only. No Unreal compilation, import, gameplay or Windows packaging was performed.",
+  "result": "PASS",
+  "fbx_files": 27,
+  "wav_files": 14,
+  "python_syntax": "PASS",
+  "native_compile": "NOT RUN \u2014 UE5 unavailable",
+  "ue_asset_import": "NOT RUN \u2014 UE5 unavailable",
+  "windows_package": "NOT PRODUCED",
+  "windows_playtest": "NOT RUN"
+}

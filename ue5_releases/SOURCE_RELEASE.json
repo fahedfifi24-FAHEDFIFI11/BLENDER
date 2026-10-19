@@ -1,0 +1,10 @@
+{
+  "file": "Neon_Veil_UE5_Source_UNCOMPILED.zip",
+  "bytes": 14816726,
+  "sha256": "9fdfcd88d8a474b0317f5ecda6bbae4637a10eb23b5113c963fd27bb7a665cc0",
+  "delivery": "UE5.4 source and original assets; NOT a Windows build",
+  "zip_crc": "PASS",
+  "extracted_source_validation": "PASS",
+  "Unreal_compilation": "NOT RUN",
+  "Windows_executable": "NOT PRODUCED"
+}
