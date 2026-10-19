@@ -113,9 +113,26 @@ namespace NeonRequiem.Editor {
    }
    go.transform.SetPositionAndRotation(position,Quaternion.Euler(0,yaw,0));go.transform.localScale=scale;
    foreach(var renderer in go.GetComponentsInChildren<MeshRenderer>()){
-    var materials=renderer.sharedMaterials;for(int i=0;i<materials.Length;i++){string key=materials[i]?materials[i].name.Split('.')[0].ToLowerInvariant():"metal";if(name=="district_deck"||name=="paving"){if(key=="concrete")key="wet";}if(!ArtPipeline.Materials.TryGetValue(key,out var replacement))throw new Exception("Unmapped material "+key+" on "+name);materials[i]=replacement;}renderer.sharedMaterials=materials;renderer.gameObject.layer=8;
+    var materials=renderer.sharedMaterials;for(int i=0;i<materials.Length;i++){string key=ResolveMaterialKey(name,materials[i]?materials[i].name:"metal");if(!ArtPipeline.Materials.TryGetValue(key,out var replacement))throw new Exception("Unmapped material "+key+" on "+name);materials[i]=replacement;}renderer.sharedMaterials=materials;renderer.gameObject.layer=8;
     var filter=renderer.GetComponent<MeshFilter>();if(collision&&filter&&filter.sharedMesh){var collider=renderer.gameObject.AddComponent<MeshCollider>();collider.sharedMesh=filter.sharedMesh;}
    }return go;
+  }
+  // FBX ImportStandard may name a material "district_deck-concrete" rather than
+  // "concrete". Strip only this model's prefix, retaining strict unknown-slot errors.
+  static string ResolveMaterialKey(string modelName,string importedName){
+   string key=importedName.Trim().ToLowerInvariant();
+   const string instanceSuffix=" (instance)";
+   if(key.EndsWith(instanceSuffix,StringComparison.Ordinal))key=key.Substring(0,key.Length-instanceSuffix.Length);
+   string model=modelName.ToLowerInvariant();
+   foreach(string separator in new[]{"-","_","::","|"}){
+    string prefix=model+separator;
+    if(key.StartsWith(prefix,StringComparison.Ordinal)){key=key.Substring(prefix.Length);break;}
+   }
+   // Blender adds .001, .002, etc. when material datablock names collide.
+   int dot=key.LastIndexOf('.');
+   if(dot>0&&int.TryParse(key.Substring(dot+1),out _))key=key.Substring(0,dot);
+   if((model=="district_deck"||model=="paving")&&key=="concrete")return "wet";
+   return key;
   }
   static void Solid(string name,Vector3 position,Vector3 size){var go=new GameObject(name);go.transform.SetParent(root);go.transform.position=position;go.layer=8;go.AddComponent<BoxCollider>().size=size;}
   static void Gate(Vector3 at,MissionStage stage){var go=Asset("security_grille",at,0,new Vector3(2,1.35f,1));go.AddComponent<LiftGate>().openAt=stage;}
