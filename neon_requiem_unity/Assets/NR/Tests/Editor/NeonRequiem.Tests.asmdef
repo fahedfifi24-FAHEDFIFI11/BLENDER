@@ -1,0 +1,1 @@
+{"name":"NeonRequiem.Tests","rootNamespace":"NeonRequiem.Tests","references":["NeonRequiem.Runtime"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"],"autoReferenced":false}

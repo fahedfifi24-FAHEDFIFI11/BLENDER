@@ -1,0 +1,19 @@
+{
+  "source_base": "https://github.com/Unity-Technologies/Graphics/tree/6000.0/staging/Packages/com.unity.render-pipelines.high-definition",
+  "package_version": "17.0.4",
+  "package_unity": "6000.0",
+  "checked": "Selected public API declarations in official source; this is not type checking or compilation.",
+  "files": {
+    "HDRenderPipelineAsset.cs": "f5d96636da3f99b2cde34407d972a65cfab47704fbd9687dc10833730cd42162",
+    "RenderPipelineSettings.cs": "1f0ed32ad9711447b8f6b3fc77b6f130b012d1245afb2cc8ac1e2f7f70c9c021",
+    "MaterialExtension.cs": "2d9481794a6b4d492172c5e1ead4b5745f324599c5d8c19214cc73b15f3527e1",
+    "HDAdditionalCameraData.cs": "69703f001d53fb432b682521020807ad704a693dae611e80146eeb8392a690f8",
+    "FrameSettings.cs": "b2b50aa3f2bcbc5805fa0e15a7e6cd085bd583dc877782f5961d2b0a94f2a75d",
+    "Fog.cs": "4f4ef58c7ef1ace17f25b80fe83b7508033b65d1dadd928687166c6025fa5815",
+    "GlobalIllumination.cs": "b80a4e625d564c830e97ac5aabc752f43588e60d9c63be409c20b85d4badddcc",
+    "ScreenSpaceReflection.cs": "6be3cc038450cd13e14a11437e9eea4a299b9b64082605964d79efedb5dba5a1",
+    "HDProbe.cs": "31002c839215ce8116a2658e21b95aa731b76d2db57ce4370886c80c0f6fef58",
+    "InfluenceVolume.cs": "4a7fb7b75b07e998626480daf9317ca272d2fd3cf0c4f58f9489c03a493c83f3"
+  },
+  "registry_access": "packages.unity.com proxy returned HTTP 403; package resolution NOT RUN"
+}

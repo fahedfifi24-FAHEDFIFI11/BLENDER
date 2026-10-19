@@ -1,0 +1,231 @@
+{
+  "result": "PASS",
+  "scope": "Blender FBX import, geometry and scale only; NOT Unity import",
+  "assets": [
+    {
+      "file": "ascent_stair.fbx",
+      "vertices": 4864,
+      "world_bounds_metres": [
+        3.070000648498535,
+        6.046000242233276,
+        3.0297632493375204
+      ]
+    },
+    {
+      "file": "cables.fbx",
+      "vertices": 6144,
+      "world_bounds_metres": [
+        12.004172325134277,
+        0.02400053385645151,
+        1.5714538097381592
+      ]
+    },
+    {
+      "file": "canopy.fbx",
+      "vertices": 448,
+      "world_bounds_metres": [
+        6.000000476837158,
+        4.000000953674316,
+        2.5600005611777306
+      ]
+    },
+    {
+      "file": "crate.fbx",
+      "vertices": 1817,
+      "world_bounds_metres": [
+        1.0100001096725464,
+        0.8500001728534698,
+        0.9000001017456611
+      ]
+    },
+    {
+      "file": "district_deck.fbx",
+      "vertices": 2304,
+      "world_bounds_metres": [
+        8.0,
+        6.0,
+        0.38600096106529236
+      ]
+    },
+    {
+      "file": "drone.fbx",
+      "vertices": 4708,
+      "world_bounds_metres": [
+        2.8399999141693115,
+        0.9450002014636993,
+        0.4500001519918442
+      ]
+    },
+    {
+      "file": "facade.fbx",
+      "vertices": 31918,
+      "world_bounds_metres": [
+        6.139999866485596,
+        3.1000020503997803,
+        10.000000130336574
+      ]
+    },
+    {
+      "file": "gate.fbx",
+      "vertices": 4512,
+      "world_bounds_metres": [
+        6.099999904632568,
+        1.200001299381256,
+        4.600000002385016
+      ]
+    },
+    {
+      "file": "hologram.fbx",
+      "vertices": 1664,
+      "world_bounds_metres": [
+        1.6360000371932983,
+        1.6360002756118774,
+        1.7000002264976501
+      ]
+    },
+    {
+      "file": "hvac.fbx",
+      "vertices": 12338,
+      "world_bounds_metres": [
+        1.858500063419342,
+        1.0725006759166718,
+        2.5800000429153442
+      ]
+    },
+    {
+      "file": "paving.fbx",
+      "vertices": 576,
+      "world_bounds_metres": [
+        6.000000476837158,
+        6.000000476837158,
+        0.20800097729079425
+      ]
+    },
+    {
+      "file": "pipe_bank.fbx",
+      "vertices": 5952,
+      "world_bounds_metres": [
+        2.0,
+        0.8282877206802368,
+        4.1999998688697815
+      ]
+    },
+    {
+      "file": "practical_fixture.fbx",
+      "vertices": 672,
+      "world_bounds_metres": [
+        1.2000000476837158,
+        0.3575000613927841,
+        0.28000006079673767
+      ]
+    },
+    {
+      "file": "railing.fbx",
+      "vertices": 1152,
+      "world_bounds_metres": [
+        6.069999933242798,
+        0.0900004655122757,
+        1.245000131309113
+      ]
+    },
+    {
+      "file": "reactor.fbx",
+      "vertices": 5376,
+      "world_bounds_metres": [
+        9.300000190734863,
+        0.450004518032074,
+        9.300000190734863
+      ]
+    },
+    {
+      "file": "security_grille.fbx",
+      "vertices": 3648,
+      "world_bounds_metres": [
+        4.0,
+        0.8000006079673767,
+        3.650000160535704
+      ]
+    },
+    {
+      "file": "service_arch.fbx",
+      "vertices": 5632,
+      "world_bounds_metres": [
+        8.25,
+        0.9000007510185242,
+        4.659413411021816
+      ]
+    },
+    {
+      "file": "service_wall.fbx",
+      "vertices": 1920,
+      "world_bounds_metres": [
+        6.0,
+        0.36500080674886703,
+        5.000000017921273
+      ]
+    },
+    {
+      "file": "shutter.fbx",
+      "vertices": 38591,
+      "world_bounds_metres": [
+        6.139999866485596,
+        3.1000020503997803,
+        10.000000130336574
+      ]
+    },
+    {
+      "file": "signal_emblem.fbx",
+      "vertices": 4896,
+      "world_bounds_metres": [
+        2.0484713315963745,
+        0.12000034004449844,
+        2.0484713315963745
+      ]
+    },
+    {
+      "file": "skybridge.fbx",
+      "vertices": 1888,
+      "world_bounds_metres": [
+        12.069999694824219,
+        2.040001392364502,
+        1.3500005304813385
+      ]
+    },
+    {
+      "file": "stall.fbx",
+      "vertices": 7576,
+      "world_bounds_metres": [
+        3.200000286102295,
+        1.7450006604194641,
+        2.770000349681638
+      ]
+    },
+    {
+      "file": "terminal.fbx",
+      "vertices": 3207,
+      "world_bounds_metres": [
+        0.8500000834465027,
+        0.6500003337860107,
+        1.800000005265506
+      ]
+    },
+    {
+      "file": "tower.fbx",
+      "vertices": 4896,
+      "world_bounds_metres": [
+        5.000000476837158,
+        4.195003271102905,
+        18.00000032584137
+      ]
+    },
+    {
+      "file": "turbine.fbx",
+      "vertices": 3456,
+      "world_bounds_metres": [
+        2.799999952316284,
+        2.010000467300415,
+        3.100000289679741
+      ]
+    }
+  ]
+}

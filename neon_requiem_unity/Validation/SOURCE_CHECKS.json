@@ -1,0 +1,19 @@
+{
+  "scope": "Source syntax and asset packaging only; NOT Unity compilation or gameplay",
+  "static_checks": "PASS",
+  "csharp_files_parsed": 17,
+  "csharp_type_check": "NOT RUN - Unity/C# toolchain unavailable",
+  "unity_import": "NOT RUN",
+  "unity_scene_generation": "NOT RUN",
+  "unity_editmode_tests": {
+    "included": 11,
+    "executed": 0,
+    "status": "NOT RUN"
+  },
+  "fbx_reimports": 25,
+  "png_files": 27,
+  "wav_files": 14,
+  "windows_exe": "NOT PRODUCED",
+  "playtest": "NOT RUN",
+  "actual_game_screenshots": 0
+}
