@@ -102,14 +102,32 @@ namespace NeonRequiem.Editor {
   }
   public static GameObject Asset(string name,Vector3 position,float yaw,Vector3 scale,bool collision=true){
    var prefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/NR/Resources/NR/Models/"+name+".fbx");if(!prefab)throw new Exception("Missing model "+name);
-   var go=(GameObject)PrefabUtility.InstantiatePrefab(prefab);PrefabUtility.UnpackPrefabInstance(go,PrefabUnpackMode.Completely,InteractionMode.AutomatedAction);go.name=name;go.transform.SetParent(root);
-   if(name=="ascent_stair"){
-    // Normalize the model's forward sign after Unity's real FBX axis conversion.
-    go.transform.SetPositionAndRotation(Vector3.zero,Quaternion.identity);go.transform.localScale=Vector3.one;
-    var renderers=go.GetComponentsInChildren<MeshRenderer>();var bounds=renderers[0].bounds;
+   // Keep the FBX importer's root conversion intact. Placement belongs on a
+   // separate parent: resetting the model root erased its unit scale and rotation.
+   var model=(GameObject)PrefabUtility.InstantiatePrefab(prefab);
+   Vector3 importedPosition=model.transform.localPosition;
+   Quaternion importedRotation=model.transform.localRotation;
+   Vector3 importedScale=model.transform.localScale;
+   PrefabUtility.UnpackPrefabInstance(model,PrefabUnpackMode.Completely,InteractionMode.AutomatedAction);
+   var go=new GameObject(name);go.transform.SetParent(root,false);
+   model.transform.SetParent(go.transform,false);
+   model.transform.localPosition=importedPosition;
+   model.transform.localRotation=importedRotation;
+   model.transform.localScale=importedScale;
+   if(name=="ascent_stair"||name=="facade"||name=="district_deck"){
+    var renderers=go.GetComponentsInChildren<MeshRenderer>();
+    if(renderers.Length==0)throw new Exception("Imported model has no renderers: "+name);
+    var bounds=renderers[0].bounds;
     foreach(var item in renderers)bounds.Encapsulate(item.bounds);
-    if(bounds.center.z<0)yaw+=180;
-    if(bounds.size.y<2.8f||bounds.size.y>3.3f||bounds.size.z<5.8f||bounds.size.z>6.3f)throw new Exception("Stair unit/axis conversion failed: "+bounds.size);
+    bool valid=true;
+    if(name=="ascent_stair"){
+     // Normalize forward sign only after the importer's unit/up-axis conversion.
+     if(bounds.center.z<go.transform.position.z)yaw+=180;
+     valid=bounds.size.y>2.8f&&bounds.size.y<3.3f&&bounds.size.z>5.8f&&bounds.size.z<6.3f;
+    }
+    else if(name=="facade")valid=bounds.size.y>9.7f&&bounds.size.y<10.3f;
+    else valid=bounds.size.x>7.8f&&bounds.size.x<8.2f&&bounds.size.z>5.8f&&bounds.size.z<6.2f;
+    if(!valid)throw new Exception("Imported model unit/axis validation failed: "+name+" bounds="+bounds.size+" preserved FBX rotation="+importedRotation.eulerAngles+" scale="+importedScale);
    }
    go.transform.SetPositionAndRotation(position,Quaternion.Euler(0,yaw,0));go.transform.localScale=scale;
    foreach(var renderer in go.GetComponentsInChildren<MeshRenderer>()){
